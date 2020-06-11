@@ -5,5 +5,5 @@ Aplikacja jest implementacją systemu zapisu osób do pewnego systemu ewidencji 
 
 
 
-#Apache Maven 3.6.3 
-#Java version: 1.8.0_241,
+#Apache Maven 3.6.3 <br>
+#Java version: 1.8.0_241
