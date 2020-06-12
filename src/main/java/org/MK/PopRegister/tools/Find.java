@@ -40,7 +40,7 @@ public class Find {
                         destList.add(sourceList.get(i));
                     }
                 }
-                /////data ur. format "YYYMMDD"
+                /////data ur. format "YYYYMMDD"
                 if (phrase.equals(sourceList.get(i).getPesel().substring(0,6))) {
                     if (!destList.contains(sourceList.get(i))) {
                         destList.add(sourceList.get(i));
