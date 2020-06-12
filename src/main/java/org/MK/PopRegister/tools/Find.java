@@ -25,8 +25,8 @@ public class Find {
 
 
                 String postalCode = phrase;
-                if (postalCode.charAt(2) == '-') {
-                    postalCode = phrase.substring(0, 2) + phrase.substring(3);
+                if (postalCode.charAt(2) != '-') {
+                    postalCode = phrase.substring(0, 2) + '-' + phrase.substring(2);
                 }
 
                 if (phrase.toUpperCase().equals(sourceList.get(i).getName().toUpperCase())) {
