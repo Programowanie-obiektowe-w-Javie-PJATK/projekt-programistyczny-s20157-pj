@@ -43,6 +43,7 @@ public class RootController implements FileChooserWithExt {
     private void newHandle() {
         popRegisterApp.getPersonList().clear();
         popRegisterApp.setPathFilePreference(null);
+        popRegisterApp.getPrimaryStage().setTitle("Ewidencja ludności");
     }
 
     /**

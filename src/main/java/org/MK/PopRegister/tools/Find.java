@@ -30,10 +30,18 @@ public class Find {
                 }
 
                 if (phrase.toUpperCase().equals(sourceList.get(i).getName().toUpperCase())) {
-                    destList.add(sourceList.get(i));
+                    if (!destList.contains(sourceList.get(i))) {
+                        destList.add(sourceList.get(i));
+                    }
                 }
 
                 if (phrase.toUpperCase().equals(sourceList.get(i).getSurname().toUpperCase())) {
+                    if (!destList.contains(sourceList.get(i))) {
+                        destList.add(sourceList.get(i));
+                    }
+                }
+                /////data ur. format "YYYMMDD"
+                if (phrase.equals(sourceList.get(i).getPesel().substring(0,6))) {
                     if (!destList.contains(sourceList.get(i))) {
                         destList.add(sourceList.get(i));
                     }
