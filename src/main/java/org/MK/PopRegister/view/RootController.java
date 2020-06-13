@@ -58,8 +58,8 @@ public class RootController implements FileChooserWithExt {
         if (file != null) {
             //////zastąpienie obecnej listy osób
             popRegisterApp.getPersonList().clear();
+            popRegisterApp.getPersonListForSearch().clear();
             popRegisterApp.importDataFromFile(file);
-
         }
 
     }
@@ -76,7 +76,7 @@ public class RootController implements FileChooserWithExt {
         if (file != null) {
             /////dołączenie danych do obecnej listy
             popRegisterApp.importDataFromFile(file);
-
+            popRegisterApp.showcontent();
         }
     }
 

@@ -60,7 +60,7 @@
         <houseblockNumber>12</houseblockNumber>
         <locality>Kraków</locality>
         <name>Marian</name>
-        <pathToFile>C:\Users\Doktor\Desktop\gazy\Irok\IIsemestr\PRG - JAVA\project\PopulationRegisterApp/src/main/IDs/78041255083.jpg</pathToFile>
+        <pathToFile>C:\Users\Doktor\Desktop\sopREPO\projekt-programistyczny-s20157-pj/src/main/IDs/78041255083.jpg</pathToFile>
         <pesel>78041255083</pesel>
         <phoneNumber>505668731</phoneNumber>
         <postalCode>31-410</postalCode>
@@ -80,20 +80,6 @@
         <postalCode>91-709</postalCode>
         <street>Bracka</street>
         <surname>Brzechwa</surname>
-    </person>
-    <person>
-        <birthday>1991-11-11</birthday>
-        <email>buczekgogo77@gmail.com</email>
-        <flatNumber>44</flatNumber>
-        <houseblockNumber>12</houseblockNumber>
-        <locality>Warszawa</locality>
-        <name>Grzegorz</name>
-        <pathToFile>C:\Users\Doktor\Desktop\sopREPO\projekt-programistyczny-s20157-pj/src/main/IDs/91111111893.jpg</pathToFile>
-        <pesel>91111111893</pesel>
-        <phoneNumber>50588741</phoneNumber>
-        <postalCode>00-150</postalCode>
-        <street>Nowolipie</street>
-        <surname>Buczkowski</surname>
     </person>
     <person>
         <birthday>2000-06-03</birthday>
@@ -804,5 +790,18 @@
         <postalCode>31-881</postalCode>
         <street>Mariana Markowskiego</street>
         <surname>Żelazo</surname>
+    </person>
+    <person>
+        <birthday>2020-06-13</birthday>
+        <email>nfjsanfs@o2.pl</email>
+        <houseblockNumber>4</houseblockNumber>
+        <locality>Gdynia</locality>
+        <name>Paweł</name>
+        <pathToFile>C:\Users\Doktor\Desktop\sopREPO\projekt-programistyczny-s20157-pj/src/main/IDs/11111111111.jpg</pathToFile>
+        <pesel>11111111111</pesel>
+        <phoneNumber>505801992</phoneNumber>
+        <postalCode>81-881</postalCode>
+        <street>Gajowa</street>
+        <surname>Byk</surname>
     </person>
 </persons>

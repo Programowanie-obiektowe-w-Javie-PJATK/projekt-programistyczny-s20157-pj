@@ -122,11 +122,15 @@ public class PersonDataController  implements CurrentWorkingDirectoryPath {
     public void deleteHandle() {
 
         int indexSelected = table.getSelectionModel().getSelectedIndex();
+        System.out.println(indexSelected);
+        System.out.println("p: "+popRegisterApp.getPersonList().size());
+        System.out.println("t: " + table.getItems().size());
         if (indexSelected >= 0) {
             boolean confirmed = popRegisterApp.showDeletePersonDialog();
             if (confirmed) {
                 table.getItems().remove(indexSelected);
-                popRegisterApp.setPersonListForSearch(popRegisterApp.getPersonList());
+                popRegisterApp.getPersonListForSearch().remove(indexSelected);
+
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -144,10 +148,11 @@ public class PersonDataController  implements CurrentWorkingDirectoryPath {
     @FXML
     public void editHandle() {
         Person person = table.getSelectionModel().getSelectedItem();
+        int selectedIndex = table.getSelectionModel().getSelectedIndex();
         if (person != null) {
             boolean confirmed = popRegisterApp.showNewEditDialog(person);
             if (confirmed) {
-                popRegisterApp.setPersonListForSearch(popRegisterApp.getPersonList());
+                popRegisterApp.getPersonListForSearch().set(selectedIndex, person);
                 showPersonDetails(person);
             }
         }
@@ -160,12 +165,13 @@ public class PersonDataController  implements CurrentWorkingDirectoryPath {
      */
     @FXML
     public void addHandle() {
-
+        System.out.println("p: "+popRegisterApp.getPersonList().size());
+        System.out.println("t: " + table.getItems().size());
         Person temp = new Person();
         boolean confirmed = popRegisterApp.showNewEditDialog(temp);
         if (confirmed) {
             popRegisterApp.getPersonList().add(temp);
-            popRegisterApp.setPersonListForSearch(popRegisterApp.getPersonList());
+            popRegisterApp.getPersonListForSearch().add(temp);
         }
     }
 
@@ -193,7 +199,7 @@ public class PersonDataController  implements CurrentWorkingDirectoryPath {
     @FXML
     private void restoreFullPersonListHandle() {
         table.setItems(popRegisterApp.getPersonList());
-        popRegisterApp.setPersonListForSearch(popRegisterApp.getPersonList());
+        popRegisterApp.getPersonListForSearch().addAll(popRegisterApp.getPersonList());
         restoreFullPersonListButton.setVisible(false);
     }
 

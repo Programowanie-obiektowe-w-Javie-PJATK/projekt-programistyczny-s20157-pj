@@ -39,13 +39,19 @@ public class PopRegisterApp extends Application {
 
             private Stage primaryStage;
             private BorderPane root;
+            private PersonDataController ctrl;
             private ObservableList<Person> personList = FXCollections.observableArrayList();
             private ObservableList<Person> personListForSearch = FXCollections.observableArrayList();
 
             public ObservableList<Person> getPersonList(){
                return personList;
              }
-            public void setPersonListForSearch(ObservableList<Person> personListForSearch) {
+
+    public ObservableList<Person> getPersonListForSearch() {
+        return personListForSearch;
+    }
+
+    public void setPersonListForSearch(ObservableList<Person> personListForSearch) {
                 this.personListForSearch = personListForSearch; }
             public Stage getPrimaryStage(){
                 return primaryStage;
@@ -122,7 +128,7 @@ public class PopRegisterApp extends Application {
             AnchorPane persondata =  loader.load();
             root.setCenter(persondata);
 
-            PersonDataController ctrl = loader.getController();
+            ctrl = loader.getController();
             ctrl.setPopRegisterApp(this);
             ///////obsługa zdarzeń, słuchacz klawiszy
             persondata.requestFocus();
@@ -298,18 +304,16 @@ public class PopRegisterApp extends Application {
             Unmarshaller unmarshal = context.createUnmarshaller();
             PersonListContainer container = (PersonListContainer) unmarshal.unmarshal(file);
 
-
             personList.addAll(container.getContainerPersons());
-            personListForSearch.clear();
-            personListForSearch.addAll(personList);
+            personListForSearch.addAll(container.getContainerPersons());
             ////zapisz ścieżke do pliku Preferences
             setPathFilePreference(file);
-
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Potwierdzenie");
             alert.setHeaderText("Udało się!");
             alert.setContentText("Pomyślnie zaimportowano dane!");
             alert.show();
+
             primaryStage.setTitle("Ewidencja ludności       Otwarty plik: " + file.getPath());
 
 
